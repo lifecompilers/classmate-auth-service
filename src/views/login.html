@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuulie | Login</title>
+
+  <link rel="apple-touch-icon" sizes="180x180"
+    href="https://mazipan.github.io/login-page-css/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="https://mazipan.github.io/login-page-css/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="https://mazipan.github.io/login-page-css/favicon/favicon-16x16.png">
+
+  <meta name="msapplication-TileColor" content="#fdcb04" />
+  <meta name="theme-color" content="#fdcb04" />
+
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/login.css">
+</head>
+
+<body>
+  <div class="App">
+    <div class="col-md-12 col-12 col-sm-6 appAside">
+      <h1 class="Title">kuulie</h1>
+      <h2 class="sub-Title">Connecting all of the world’s</h2>
+    </div>
+    <div class="col-md-4 col-lg-4 col-sm-4 appForm">
+      <div class="formCenter">
+        <div class="main-Header">Login</div>
+        <div class="sub-Header">Good to see you here. </div>
+        <div class="error-message form-error">
+          ${errorMessage}
+        </div>
+        <form id="loginForm" action="/login" class="formFields" method="POST"
+          enctype="application/x-www-form-urlencoded">
+          <input type="hidden" name="state" value="00000000000000" />
+          <input type="hidden" name="response_type" value="code" />
+          <div class="formField">
+            <label class="formFieldLabel" htmlFor="email">
+              Email ID
+            </label>
+            <input type="email" id="username" class="formFieldInput" placeholder="Enter email ID" name="username" />
+            <label class="formFieldLabel" htmlFor="password">
+              Password
+            </label>
+            <input type="password" id="password" class="formFieldInput" placeholder="Enter Password" name="password" />
+          </div>
+          <div class="button-section">
+            <button type="submit" class="formFieldButton">Sign In</button>
+            <a href="/reset-password" class="formFieldLink">Forgot Password?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

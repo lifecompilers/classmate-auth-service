@@ -1,0 +1,52 @@
+{
+  "name": "classmate-auth-service",
+  "version": "0.1.0",
+  "description": "Auth Service for ClassMate Application",
+  "main": "build/index.js",
+  "engines": {
+    "node": "14.x"
+  },
+  "scripts": {
+    "dev": "ts-node-dev -r dotenv/config src/index.ts",
+    "build": "tsc && npm run copy-templates && npm run copy-views",
+    "copy-views": "copyfiles -u 1 src/views/**/* build && echo 'Copied Views'",
+    "copy-templates": "copyfiles -u 1 src/shared/email-templates/**/* build && echo 'Copied email templates'",
+    "start": "node -r dotenv/config build/index.js",
+    "deploy-prod": "npm install && npm run build && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lifecompilers/classmate-auth-service.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lifecompilers/classmate-auth-service/issues"
+  },
+  "homepage": "https://github.com/lifecompilers/classmate-auth-service#readme",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "cors": "^2.8.5",
+    "date-fns": "^2.28.0",
+    "express": "^4.17.2",
+    "express-es6-template-engine": "^2.2.3",
+    "express-validator": "^6.14.0",
+    "express-winston": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.8",
+    "nodemailer": "^6.7.2",
+    "oauth2-express": "^1.4.0",
+    "redis": "^4.0.2",
+    "winston": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.8",
+    "copyfiles": "^2.4.1",
+    "dotenv": "^14.3.2",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.5"
+  }
+}
